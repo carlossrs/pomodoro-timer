@@ -9,6 +9,7 @@ function App() {
   const [timer, setTimer] = useState(sessionLength);
   const [timerStatus, setTimerStatus] = useState(false);
   const [title, setTitle] = useState("Session");
+  const alarm = document.getElementById("beep");
 
   const formatTime = (time) => {
     let minutes = Math.floor(time / 60);
@@ -63,8 +64,7 @@ function App() {
       setSessionLength(25 * 60);
       setBreakLength(5 * 60);
       setTimer(25 * 60);
-      setTitle("Session");
-      const alarm = document.getElementById("beep");
+      setTitle("Session");      
       alarm.pause();
       alarm.currentTime = 0;
     }, 1000);
@@ -73,21 +73,28 @@ function App() {
   const playStop = () => {
     clearTimeout(timeout);
     setTimerStatus(!timerStatus);
+    alarm.pause();
+  };
+
+  const playSound = () => {
+    alarm.currentTime = 0;
+    alarm.volume = 0.5;
+    alarm.play();
+    setTimeout(() => {
+      alarm.pause();
+    }, 5000);
   };
 
   const changeTimer = () => {
-    const alarm = document.getElementById("beep");
-    alarm.currentTime = 0;
-    alarm.volume = 0.2;
     if (!timer && title === "Session") {
+      playSound();
       setTimer(breakLength);
       setTitle("Break");
-      alarm.play();
     }
-    if (!timer && title === "Break") {
+    if (!timer && title === "Break") {      
+      playSound();
       setTimer(sessionLength);
       setTitle("Session");
-      alarm.play();
     }
   };
 
@@ -104,13 +111,15 @@ function App() {
     stopwatch();
   }, [timerStatus, timer, timeout]);
 
-  const changeMode = () => {    
-    document.getElementById('App').classList.toggle("dark-mode");
-  }
+  const changeMode = () => {
+    document.getElementById("App").classList.toggle("dark-mode");
+  };
 
   return (
     <div id="App">
-      <button id="mode" onClick={changeMode}>&#128161;</button>
+      <button id="mode" onClick={changeMode}>
+        &#128161;
+      </button>
       <h1>25 + 5 Clock</h1>
       <div className="intervals">
         <div id="length">
