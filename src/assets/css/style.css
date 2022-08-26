@@ -58,12 +58,6 @@ h1 {
   letter-spacing: 0;
 }
 
-
-#reset {
-  font-size: 1.25rem;
-  line-height: 0.5;
-}
-
 .plus-minus {
   font-size: 1.55rem;
   font-weight: 600;
@@ -82,7 +76,7 @@ h1 {
 
 #break-length,
 #session-length {
-  font-size: 1.25rem;  
+  font-size: 1.25rem;
   padding: 0 0.25rem;
 }
 
@@ -101,14 +95,9 @@ h1 {
   font-size: 3.125rem;
 }
 
-button:hover{
-  cursor: pointer;
-  transform: scale(1.1);
-}
-
 /* DARK/LIGHT MODE */
 
-#mode{
+#mode {
   position: absolute;
   right: 1rem;
   top: 1rem;
@@ -123,17 +112,17 @@ button:hover{
   color: aliceblue;
 }
 
-#App.dark-mode .timer{
-  border: 0.125rem solid aliceblue;;
+#App.dark-mode .timer {
+  border: 0.125rem solid aliceblue;
 }
 
-#App.dark-mode .btn{
+#App.dark-mode .btn {
   color: aliceblue;
   border: 0.094rem solid aliceblue;
   background-color: #844ce6be;
 }
 
-#App.dark-mode #mode{
+#App.dark-mode #mode {
   background-color: black;
   color: aliceblue;
 }
@@ -156,5 +145,12 @@ button:hover{
   .timer {
     margin-top: 3.125rem;
     transform: scale(1.3);
+  }
+}
+
+@media (hover: hover) {
+  button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
   }
 }
