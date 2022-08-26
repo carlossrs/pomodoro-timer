@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.065rem;
+}
+
+#App {
+  background-color: aliceblue;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 3.438rem;
+  font-weight: 500;
+  margin-bottom: 3.125rem;
+}
+
+#session-label,
+#break-label {
+  margin-bottom: 0.625rem;
+}
+
+#length {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.intervals {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  text-align: center;
+  padding: 0 0.313rem;
+  font-size: 0.938rem;
+  font-weight: 700;
+  height: 1.563rem;
+  border: 0.094rem solid black;
+  border-radius: 0.313rem;
+  background: #854ce6;
+  margin: 0.188rem;
+  letter-spacing: 0;
+}
+
+
+#reset {
+  font-size: 1.25rem;
+  line-height: 0.5;
+}
+
+.plus-minus {
+  font-size: 1.55rem;
+  font-weight: 600;
+  line-height: 0.2;
+}
+
+.break,
+.session {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.625rem;
+  font-size: 1.25rem;
+}
+
+#break-length,
+#session-length {
+  font-size: 1.25rem;  
+  padding: 0 0.25rem;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 0.125rem solid black;
+  width: 12.5rem;
+  padding: 0.625rem 0.313rem;
+  border-radius: 2.813rem;
+}
+
+#time-left {
+  font-size: 3.125rem;
+}
+
+button:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+/* DARK/LIGHT MODE */
+
+#mode{
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  border: none;
+  background-color: aliceblue;
+  font-weight: 700;
+  font-size: 1.875rem;
+}
+
+#App.dark-mode {
+  background-color: black;
+  color: aliceblue;
+}
+
+#App.dark-mode .timer{
+  border: 0.125rem solid aliceblue;;
+}
+
+#App.dark-mode .btn{
+  color: aliceblue;
+  border: 0.094rem solid aliceblue;
+  background-color: #844ce6be;
+}
+
+#App.dark-mode #mode{
+  background-color: black;
+  color: aliceblue;
+}
+
+/* MEDIA QUERY */
+
+@media (max-width: 700px) {
+  h1 {
+    position: absolute;
+    font-size: 2.813rem;
+    font-weight: 500;
+    top: 6.25rem;
+  }
+  #session-label,
+  #break-label {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+  }
+  .timer {
+    margin-top: 3.125rem;
+    transform: scale(1.3);
+  }
+}
